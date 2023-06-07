@@ -3,7 +3,7 @@
 
     <string-array name="options">
         <item>Drinks</item>
-        <item>Sandwitches</item>
+        <item>Sandwiches</item>
         <item>pizzas</item>
     </string-array>
 </resources>

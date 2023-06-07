@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView listView = (ListView)findViewById(R.id.main_menu);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.options));
+        listView.setAdapter(arrayAdapter);
+
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,
@@ -29,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position == 2){
-                    Intent intent = new Intent(MainActivity.this,DrinksActivity.class);
+                    Intent intent = new Intent(MainActivity.this,PizzaActivity.class);
                     startActivity(intent);
                 }
             }
         };
-        ListView listView = (ListView)findViewById(R.id.main_menu);
+        //you are registering the 'itemClickListener' as the listener for click events on the ListView
         listView.setOnItemClickListener(itemClickListener);
     }
 }

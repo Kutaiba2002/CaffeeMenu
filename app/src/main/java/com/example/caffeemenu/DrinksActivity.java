@@ -24,6 +24,7 @@ public class DrinksActivity extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.drinks_list);
         listView.setAdapter(listAdapter);
 
+        //زي جهاز التنصت هاض عشان يشوف اذا حدا ضغط على ListView
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
 
             //The "onItemClick()" method is a callback method that is invoked when an item in an 'AdapterView' (such as a 'ListView' or 'Spinner;) is clicked
